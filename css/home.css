@@ -21,6 +21,10 @@
     box-sizing: border-box;
 }
 
+/*rodape na cor certa */
+footer, .main-footer, .footer-container {
+    background-color: #CE99E4 !important;
+}
 /* Fundo Geral da Página em #F6F1DE */
 body {
     font-family: var(--font-body);
@@ -79,9 +83,7 @@ body {
 
 .btn-apoie:hover {
     transform: scale(1.05);
-}
-
-/* ==========================================
+}/* ==========================================
    3. HERO SECTION (COM VECTOR 3.SVG NO FUNDO)
    ========================================== */
 .hero-section {
@@ -91,11 +93,18 @@ body {
     padding: 20px 80px 140px 80px;
     position: relative;
     
-    /* VETOR 3 NO TOPO: Ajustado para preencher a área exatamente como no Figma */
-    background-image: url('../imagens/Vector\ 3.svg');;
+}
+    .hero-section  {
+    background-color: var(--cream-bg);
+    padding: 40px 80px 160px 80px;
+    position: relative;
+    min-height: 700px;
+    
+    /* VETOR 5 NO RODAPÉ DA SEÇÃO DE DEPOIMENTOS */
+    background-image: url('../imagens/Vector\ 3.svg');
     background-repeat: no-repeat;
-    background-position: top center;
-    background-size:100% auto;
+    background-position: bottom center;
+    background-size: 100% auto;
 }
 
 .hero-content {
