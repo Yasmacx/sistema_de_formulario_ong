@@ -1,31 +1,56 @@
-/* Importação das fontes solicitadas */
+/* ==========================================================================
+   ÍNDICE
+   --------------------------------------------------------------------------
+   0. Importação de fontes
+   1. Variáveis (cores e fontes)
+   2. Reset e estilos globais
+   3. Cabeçalho / Menu de navegação
+   4. Seção Hero (apresentação)
+   5. Seção de Depoimentos
+   6. Responsividade (tablet / mobile)
+   ========================================================================== */
+
+
+/* ==========================================================================
+   0. IMPORTAÇÃO DE FONTES
+   Carrega do Google Fonts: Climate Crisis (títulos) e Lalezar (textos).
+   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Lalezar&display=swap');
 
-/* ==========================================
-   1. VARIÁVEIS DE CORES E FONTES
-   ========================================== */
+
+/* ==========================================================================
+   1. VARIÁVEIS
+   Centraliza as cores e fontes do site. Para mudar uma cor em todo o site,
+   basta alterar aqui.
+   ========================================================================== */
 :root {
-    --purple-main: #CE99E4;      /* Roxo dos vetores */
-    --cream-bg: #F6F1DE;        /* Fundo geral bege/creme */
-    --mint-green: #9FEECA;      /* Verde menta das molduras e cards */
-    --purple-dark: #A572B9;     /* Roxo das bordas e texto dos cards */
+    /* Cores */
+    --purple-main: #CE99E4;   /* Roxo dos vetores, topo e títulos */
+    --cream-bg: #F6F1DE;      /* Fundo geral bege/creme */
+    --mint-green: #9FEECA;    /* Verde menta das molduras e cards */
+    --purple-dark: #A572B9;   /* Roxo das bordas e texto dos cards */
     --white: #FFFFFF;
-    
-    --font-heading: 'Climate Crisis', cursive, sans-serif;
-    --font-body: 'Lalezar', cursive, sans-serif;
+
+    /* Fontes */
+    --font-heading: 'Climate Crisis', cursive, sans-serif;  /* Títulos */
+    --font-body: 'Lalezar', cursive, sans-serif;            /* Textos */
 }
 
+
+/* ==========================================================================
+   2. RESET E ESTILOS GLOBAIS
+   ========================================================================== */
+
+/* Remove margens/paddings padrão e faz o tamanho dos elementos
+   incluir padding e borda (facilita os cálculos de layout). */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/*rodape na cor certa */
-footer, .main-footer, .footer-container {
-    background-color: #CE99E4 !important;
-}
-/* Fundo Geral da Página em #F6F1DE */
+/* Fundo creme da página, fonte padrão, texto branco e
+   sem rolagem horizontal. */
 body {
     font-family: var(--font-body);
     background-color: var(--cream-bg);
@@ -33,28 +58,48 @@ body {
     overflow-x: hidden;
 }
 
-/* ==========================================
-   2. CABEÇALHO / HEADER
-   ========================================== */
-.main-header {
+
+/* ==========================================================================
+   3. CABEÇALHO / MENU DE NAVEGAÇÃO
+   ========================================================================== */
+
+/* Barra do topo: fundo roxo, logo à esquerda e menu à direita (flex).
+   O !important garante que o roxo prevaleça sobre outros estilos. */
+.main-header,
+header {
+    background-color: #CE99E4 !important;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px 80px;
+    width: 100%;
+}
+
+/* Mantém o cabeçalho acima das outras camadas da página. */
+.main-header {
     position: relative;
     z-index: 10;
 }
 
+/* Garante o fundo roxo também em .top-bar e .hero-wrapper. */
+.top-bar,
+.hero-wrapper {
+    background-color: #CE99E4 !important;
+}
+
+/* Logo: altura fixa e largura proporcional. */
 .logo img {
     height: 50px;
     width: auto;
 }
 
+/* Lista de links do menu: lado a lado com espaçamento. */
 .nav-links {
     display: flex;
     gap: 32px;
 }
 
+/* Links do menu: brancos, sem sublinhado, com leve transição. */
 .nav-links a {
     color: var(--white);
     text-decoration: none;
@@ -64,11 +109,21 @@ body {
     transition: opacity 0.2s ease;
 }
 
+/* Efeito ao passar o mouse: link fica levemente transparente. */
 .nav-links a:hover {
     opacity: 0.85;
 }
 
-/* Botão Apoie */
+/* Força links dentro do cabeçalho a ficarem brancos (!important). */
+.main-header .nav-links a,
+.main-header a {
+    color: #FFFFFF !important;
+    font-family: 'Lalezar', cursive, sans-serif;
+    font-size: 1.25rem;
+    text-decoration: none;
+}
+
+/* Botão "Apoie" (estilo base): pílula creme com texto roxo. */
 .btn-apoie {
     background-color: var(--cream-bg);
     color: var(--purple-dark);
@@ -81,92 +136,110 @@ body {
     transition: transform 0.2s ease;
 }
 
+/* Efeito ao passar o mouse: botão cresce levemente. */
 .btn-apoie:hover {
     transform: scale(1.05);
-}/* ==========================================
-   3. HERO SECTION (COM VECTOR 3.SVG NO FUNDO)
-   ========================================== */
+}
+
+/* Botão "Apoie" dentro do cabeçalho: garante fundo creme e texto roxo,
+   mesmo com a regra de links brancos acima. */
+.main-header .btn-apoie {
+    background-color: #F6F1DE !important;
+    color: #A572B9 !important;
+    padding: 8px 36px;
+    border-radius: 25px;
+    font-family: 'Lalezar', cursive, sans-serif;
+    font-size: 1.25rem;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ==========================================================================
+   4. SEÇÃO HERO (apresentação principal)
+   Texto à esquerda e imagem à direita, com o Vector 3.svg no rodapé.
+   ========================================================================== */
+
+/* Container da seção: layout em linha (texto + imagem), fundo creme
+   e o vetor decorativo (Vector 3) colado na parte de baixo. */
 .hero-section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 80px 140px 80px;
-    position: relative;
-    
-}
-    .hero-section  {
-    background-color: var(--cream-bg);
-    padding: 40px 80px 160px 80px;
+    padding: 40px 80px 160px 80px;  /* espaço extra embaixo para o vetor */
     position: relative;
     min-height: 700px;
-    
-    /* VETOR 5 NO RODAPÉ DA SEÇÃO DE DEPOIMENTOS */
+    background-color: var(--cream-bg);
+
+    /* Vetor 3 no rodapé da seção hero */
     background-image: url('../imagens/Vector\ 3.svg');
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: 100% auto;
 }
 
+/* Coluna de texto (largura limitada, acima do fundo). */
 .hero-content {
     max-width: 500px;
     z-index: 5;
 }
 
-/* Título com a fonte Climate Crisis */
+/* Título principal: Climate Crisis, maiúsculo, branco. */
 .hero-content h1 {
     font-family: var(--font-heading);
     font-size: 2.2rem;
     line-height: 1.15;
     color: var(--white);
-    text-transform: uppercase;
     margin-bottom: 25px;
 }
 
-/* Texto em Lalezar */
+/* Parágrafo de apoio: Lalezar, branco. */
 .hero-content p {
     font-family: var(--font-body);
-    font-size: 1.05rem;
+    font-size: 1.35rem; /* Aumentado de 1.05rem para 1.35rem */
     line-height: 1.45;
     color: var(--white);
     font-weight: 400;
 }
 
-/* Container da Imagem Única */
+/* Coluna da imagem (acima do fundo). */
 .hero-image-container {
     position: relative;
     z-index: 5;
+    display: flex;
+    justify-content: center; /* Garantia de alinhamento centralizado do bloco da foto */
 }
 
+/* Moldura verde menta com cantos arredondados ao redor da foto. */
 .image-card {
     background-color: var(--mint-green);
     padding: 26px;
     border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.image-card img {
-    width: 380px;
-    height: 420px;
-    object-fit: cover;
-    border-radius: 28px;
-    display: block;
-}
+/* ==========================================================================
+   5. SEÇÃO DE DEPOIMENTOS
+   Título centralizado e grade de cards, com o Vector 5.svg no rodapé.
+   ========================================================================== */
 
-/* ==========================================
-   4. DEPOIMENTOS (COM VECTOR 5.SVG NO FUNDO)
-   ========================================== */
+/* Container da seção: fundo creme e vetor decorativo (Vector 5) embaixo. */
 .depoimentos-section {
     background-color: var(--cream-bg);
-    padding: 40px 80px 160px 80px;
+    padding: 40px 80px 160px 80px;  /* espaço extra embaixo para o vetor */
     position: relative;
     min-height: 700px;
-    
-    /* VETOR 5 NO RODAPÉ DA SEÇÃO DE DEPOIMENTOS */
+
+    /* Vetor 5 no rodapé da seção de depoimentos */
     background-image: url('../imagens/Vector\ 5.svg');
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: 100% auto;
 }
 
+/* Título da seção: roxo, centralizado, maiúsculo. */
 .depoimentos-section h2 {
     font-family: var(--font-heading);
     font-size: 2.2rem;
@@ -178,6 +251,7 @@ body {
     z-index: 5;
 }
 
+/* Grade de 2 colunas que organiza os cards. */
 .cards-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -188,6 +262,7 @@ body {
     z-index: 5;
 }
 
+/* Card de depoimento: fundo menta, borda roxa grossa e cantos arredondados. */
 .depoimento-card {
     background-color: var(--mint-green);
     border: 9px solid var(--purple-dark);
@@ -196,6 +271,10 @@ body {
     color: var(--purple-dark);
 }
 
+/* Posição dos cards na grade:
+   1º card -> coluna 1, linha 1
+   3º card -> coluna 1, linha 2
+   2º card -> coluna 2, ocupa as 2 linhas, centralizado verticalmente */
 .cards-grid .depoimento-card:nth-child(1) {
     grid-column: 1;
     grid-row: 1;
@@ -212,6 +291,7 @@ body {
     align-self: center;
 }
 
+/* Texto do depoimento. */
 .depoimento-card p {
     font-family: var(--font-body);
     font-size: 1.1rem;
@@ -219,6 +299,7 @@ body {
     margin-bottom: 15px;
 }
 
+/* Autor / informação complementar do depoimento. */
 .depoimento-card span {
     font-family: var(--font-body);
     font-size: 0.95rem;
@@ -226,16 +307,20 @@ body {
     opacity: 0.9;
 }
 
-/* ==========================================
-   5. RESPONSIVIDADE (MOBILE / TABLET)
-   ========================================== */
+
+/* ==========================================================================
+   6. RESPONSIVIDADE (telas de até 960px: tablet e mobile)
+   ========================================================================== */
 @media (max-width: 960px) {
+
+    /* Cabeçalho: logo e menu empilhados, menos espaçamento. */
     .main-header {
         flex-direction: column;
         gap: 20px;
         padding: 20px;
     }
 
+    /* Hero: texto e imagem empilhados e centralizados. */
     .hero-section {
         flex-direction: column;
         padding: 20px 20px 100px 20px;
@@ -252,12 +337,14 @@ body {
         font-size: 1.6rem;
     }
 
+    /* Imagem se adapta à largura da tela. */
     .image-card img {
         width: 100%;
         max-width: 320px;
         height: auto;
     }
 
+    /* Depoimentos: uma única coluna, cards um embaixo do outro. */
     .cards-grid {
         grid-template-columns: 1fr;
     }
