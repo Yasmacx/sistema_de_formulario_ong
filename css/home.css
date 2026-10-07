@@ -1,31 +1,30 @@
-/* Importação das fontes exatas informadas */
+/* Importação das fontes solicitadas */
 @import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Lalezar&display=swap');
 
 /* ==========================================
-   1. VARIÁVEIS DE CORES E FONTES (EXATAS)
+   1. VARIÁVEIS DE CORES E FONTES
    ========================================== */
 :root {
-    --purple-main: #CE99E4;      /* Roxo principal da ONG */
-    --cream-bg: #F6F1DE;        /* Bege/creme do fundo e do botão Apoie */
-    --mint-green: #9FEECA;      /* Verde menta dos cards e moldura */
-    --purple-dark: #A572B9;     /* Roxo escuro para as bordas dos cards */
+    --purple-main: #CE99E4;      /* Roxo dos vetores */
+    --cream-bg: #F6F1DE;        /* Fundo geral bege/creme */
+    --mint-green: #9FEECA;      /* Verde menta das molduras e cards */
+    --purple-dark: #A572B9;     /* Roxo das bordas e texto dos cards */
     --white: #FFFFFF;
     
-    /* Fontes */
     --font-heading: 'Climate Crisis', cursive, sans-serif;
     --font-body: 'Lalezar', cursive, sans-serif;
 }
 
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Fundo Geral da Página em #F6F1DE */
 body {
     font-family: var(--font-body);
-    background-color: var(--purple-main);
+    background-color: var(--cream-bg);
     color: var(--white);
     overflow-x: hidden;
 }
@@ -56,7 +55,7 @@ body {
     color: var(--white);
     text-decoration: none;
     font-family: var(--font-body);
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     letter-spacing: 0.5px;
     transition: opacity 0.2s ease;
 }
@@ -70,7 +69,7 @@ body {
     background-color: var(--cream-bg);
     color: var(--purple-dark);
     font-family: var(--font-body);
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     padding: 8px 36px;
     border-radius: 25px;
     text-decoration: none;
@@ -83,7 +82,7 @@ body {
 }
 
 /* ==========================================
-   3. DESKTOP - 1: HERO SECTION
+   3. HERO SECTION (COM VECTOR 3.SVG NO FUNDO)
    ========================================== */
 .hero-section {
     display: flex;
@@ -91,18 +90,23 @@ body {
     justify-content: space-between;
     padding: 20px 80px 140px 80px;
     position: relative;
-    background-color: var(--purple-main);
+    
+    /* VETOR 3 NO TOPO: Ajustado para preencher a área exatamente como no Figma */
+    background-image: url('../imagens/Vector\ 3.svg');;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size:100% auto;
 }
 
 .hero-content {
-    max-width: 520px;
+    max-width: 500px;
     z-index: 5;
 }
 
-/* Título Principal com a fonte Climate Crisis */
+/* Título com a fonte Climate Crisis */
 .hero-content h1 {
     font-family: var(--font-heading);
-    font-size: 2.3rem;
+    font-size: 2.2rem;
     line-height: 1.15;
     color: var(--white);
     text-transform: uppercase;
@@ -118,18 +122,15 @@ body {
     font-weight: 400;
 }
 
-/* Moldura e Imagem Principal */
-.hero-carousel {
+/* Container da Imagem Única */
+.hero-image-container {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     z-index: 5;
 }
 
 .image-card {
     background-color: var(--mint-green);
-    padding: 28px;
+    padding: 26px;
     border-radius: 40px;
 }
 
@@ -141,62 +142,25 @@ body {
     display: block;
 }
 
-/* Setas do Carrossel */
-.arrow {
-    position: absolute;
-    background-color: var(--white);
-    color: var(--mint-green);
-    border: none;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
-    z-index: 6;
-}
-
-.arrow.left {
-    left: -18px;
-}
-
-.arrow.right {
-    right: -18px;
-}
-
-/* 🌊 VETOR 1: Curva Orgânica entre a Seção Hero e Depoimentos */
-.hero-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 120px;
-    background-color: var(--cream-bg);
-    /* Clip-path gerando a onda orgânica do Figma */
-    clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
-    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-    z-index: 2;
-}
-
 /* ==========================================
-   4. DESKTOP - 2: DEPOIMENTOS
+   4. DEPOIMENTOS (COM VECTOR 5.SVG NO FUNDO)
    ========================================== */
 .depoimentos-section {
     background-color: var(--cream-bg);
-    padding: 50px 80px 180px 80px;
+    padding: 40px 80px 160px 80px;
     position: relative;
     min-height: 700px;
+    
+    /* VETOR 5 NO RODAPÉ DA SEÇÃO DE DEPOIMENTOS */
+    background-image: url('../imagens/Vector\ 5.svg');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 100% auto;
 }
 
-/* Título em Climate Crisis na cor Roxa */
 .depoimentos-section h2 {
     font-family: var(--font-heading);
-    font-size: 2.3rem;
+    font-size: 2.2rem;
     color: var(--purple-main);
     text-align: center;
     text-transform: uppercase;
@@ -205,7 +169,6 @@ body {
     z-index: 5;
 }
 
-/* Grid Assimétrica para os 3 Cards de Depoimento */
 .cards-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -220,11 +183,10 @@ body {
     background-color: var(--mint-green);
     border: 9px solid var(--purple-dark);
     border-radius: 30px;
-    padding: 30px;
+    padding: 28px;
     color: var(--purple-dark);
 }
 
-/* Card 1 e 3 do Lado Esquerdo */
 .cards-grid .depoimento-card:nth-child(1) {
     grid-column: 1;
     grid-row: 1;
@@ -235,7 +197,6 @@ body {
     grid-row: 2;
 }
 
-/* Card 2 do Lado Direito (Centralizado Verticalmente na Grid) */
 .cards-grid .depoimento-card:nth-child(2) {
     grid-column: 2;
     grid-row: 1 / span 2;
@@ -244,34 +205,20 @@ body {
 
 .depoimento-card p {
     font-family: var(--font-body);
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     line-height: 1.4;
     margin-bottom: 15px;
 }
 
 .depoimento-card span {
     font-family: var(--font-body);
-    font-size: 1rem;
+    font-size: 0.95rem;
     display: block;
     opacity: 0.9;
 }
 
-/* 🌊 VETOR 2: Onda Roxa Inferior da Seção de Depoimentos */
-.depoimentos-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 220px;
-    background-color: var(--purple-main);
-    /* Clip-path criando a onda do fundo da imagem 2 */
-    clip-path: ellipse(80% 100% at 50% 100%);
-    z-index: 2;
-}
-
 /* ==========================================
-   5. RESPONSIVIDADE PARA DISPOSITIVOS MÓVEIS
+   5. RESPONSIVIDADE (MOBILE / TABLET)
    ========================================== */
 @media (max-width: 960px) {
     .main-header {
@@ -282,22 +229,23 @@ body {
 
     .hero-section {
         flex-direction: column;
-        padding: 30px 20px 100px 20px;
+        padding: 20px 20px 100px 20px;
         text-align: center;
+        background-size: cover;
     }
 
     .hero-content {
         max-width: 100%;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
     }
 
     .hero-content h1 {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
     }
 
     .image-card img {
         width: 100%;
-        max-width: 300px;
+        max-width: 320px;
         height: auto;
     }
 
