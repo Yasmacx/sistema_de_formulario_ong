@@ -1,0 +1,292 @@
+/* ==========================================================================
+   1. VARIÁVEIS GLOBAIS E PALETA DE CORES DO FIGMA
+   ========================================================================== */
+:root {
+  /* Cores extraídas do protótipo */
+  --bg-green: #98ecba;        /* Verde mint do fundo/vetores */
+  --bg-cream: #f6f3e7;        /* Bege/Creme do fundo alternado */
+  --text-purple: #9c7cb7;     /* Roxo dos títulos arredondados */
+  --text-dark: #333333;       /* Texto do corpo */
+  --btn-light: #ffffff;       /* Fundo do botão Apoie */
+  
+  --font-title: 'Fredoka', 'Comfortaa', 'Arial Rounded MT Bold', sans-serif;
+  --font-body: 'Nunito', 'Segoe UI', sans-serif;
+  
+  --radius-card: 28px;
+  --radius-pill: 50px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background-color: var(--bg-cream);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO / MENU DE NAVEGAÇÃO
+   ========================================================================== */
+.main-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.nav-links a {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.8;
+}
+
+/* Botão Apoie em Pílula */
+.nav-links .btn-apoie {
+  background-color: var(--btn-light);
+  color: var(--bg-green);
+  padding: 0.5rem 1.6rem;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   3. ESTRUTURA DAS SEÇÕES E VETORES (DESKTOP 1 A 5)
+   ========================================================================== */
+
+/* --- TÍTULOS ESTILIZADOS NO PADRÃO FIGMA --- */
+h1, h2, h3 {
+  font-family: var(--font-title);
+  color: var(--text-purple);
+  font-weight: 800;
+  text-align: center;
+}
+
+h1 { font-size: 3rem; margin-bottom: 2rem; }
+h2 { font-size: 2.4rem; margin-bottom: 1.5rem; }
+
+/* --------------------------------------------------------------------------
+   DESKTOP 1: SEÇÃO HERO / SOBRE NÓS
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--bg-green);
+  background-image: url('../imagens/vector\ verde\ sobre1.svg'); /* VETOR 1 */
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: cover;
+  padding: 8rem 2rem 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.hero-content h1 {
+  color: #ffffff; /* Título em branco na hero principal */
+}
+
+.hero-image-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 650px;
+}
+
+.image-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius-card);
+}
+
+/* --------------------------------------------------------------------------
+   DESKTOP 2: NOSSA HISTÓRIA
+   -------------------------------------------------------------------------- */
+.historia-section {
+  position: relative;
+  background-color: var(--bg-cream);
+  background-image: url('../imagens/vector\ verde\ sobre2.svg'); /* VETOR 2 */
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  padding: 6rem 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.historia-texto p {
+  color: var(--text-purple);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.historia-imagem img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: var(--radius-card);
+}
+
+/* --------------------------------------------------------------------------
+   DESKTOP 3: MISSÃO
+   -------------------------------------------------------------------------- */
+.missao-section {
+  position: relative;
+  background-color: var(--bg-cream);
+  background-image: url('../imagens/vector\ verde\ sobre3.svg'); /* VETOR 3 */
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: contain;
+  padding: 6rem 10%;
+  text-align: center;
+}
+
+.missao-banner {
+  width: 100%;
+  max-width: 800px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 100px; /* Card oval de destaque */
+  margin: 2rem auto;
+}
+
+/* --------------------------------------------------------------------------
+   DESKTOP 4: VISÃO E VALORES
+   -------------------------------------------------------------------------- */
+.visao-valores-section {
+  position: relative;
+  background-color: var(--bg-cream);
+  background-image: url('../imagens/vector\ verde\ sobre4.svg'); /* VETOR 4 */
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: contain;
+  padding: 6rem 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.valores-lista {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.valores-lista li {
+  margin-bottom: 1rem;
+  color: var(--text-purple);
+  font-size: 0.95rem;
+}
+
+.valores-lista strong {
+  display: block;
+  font-size: 1.1rem;
+}
+
+/* --------------------------------------------------------------------------
+   DESKTOP 5: NOSSOS PILARES (CARDS GRID)
+   -------------------------------------------------------------------------- */
+.depoimentos-section {
+  background-color: var(--bg-green);
+  padding: 6rem 8%;
+  text-align: center;
+}
+
+.depoimentos-section h2 {
+  color: #ffffff;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.depoimento-card {
+  background-color: var(--bg-cream);
+  padding: 2rem;
+  border-radius: var(--radius-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+.depoimento-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.depoimento-card p {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  color: var(--bg-green);
+  margin-bottom: 0.5rem;
+}
+
+.depoimento-card span {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+/* ==========================================================================
+   4. RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 850px) {
+  .historia-section,
+  .visao-valores-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .main-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
