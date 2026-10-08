@@ -4,43 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - ONG</title>
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/estilo.css">
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/home.css">   <!-- sempre por último -->
 </head>
 <body>
 
-    <!-- CABEÇALHO / HEADER -->
-    <header class="main-header">
-        <div class="logo">
-            <a href="index.html"><img src="imagens/logo-branca.png" alt="Logo ONG"></a>
-        </div>
-        <nav class="nav-links">
+    <!-- Wrapper roxo que envolve cabeçalho + hero -->
+    <div class="hero-wrapper">
+
+        <!-- CABEÇALHO / HEADER -->
+        <header class="main-header">
+            <div class="logo">
+                <a href="index.html"><img src="imagens/logo-branca.png" alt="Logo ONG"></a>
+            </div>
             <a href="pages/sobre.html">Sobre Nós</a>
             <a href="pages/programas.html">Programas</a>
             <a href="pages/como-ajudar.html">Como ajudar</a>
             <a href="pages/transparencia.html">Transparência</a>
             <a href="pages/contato.html">Contato</a>
-        </nav>
-        <a href="pages/como-ajudar.html" class="btn-apoie">Apoie</a>
-    </header>
+            </nav>
+            <a href="pages/como-ajudar.html" class="btn-apoie">Apoie</a>
+        </header>
 
-    <!-- DESKTOP - 1: HERO SECTION -->
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1>Toda criança merece a chance de aprender, crescer e transformar o próprio futuro</h1>
-            <p>
-                No Brasil, milhões de crianças em situação de vulnerabilidade social enfrentam barreiras diárias para ter acesso a uma educação de qualidade – seja pela falta de material escolar, ausência de apoio pedagógico no contraturno, falta de conectividade ou salas de aula inadequadas. A [Nome da ONG] atua diretamente na ponte dessa desigualdade, oferecendo materiais, tutoria gratuita e tecnologia para garantir que nenhuma criança fique para trás por falta de recursos.
-            </p>
-        </div>
-
-        <div class="hero-image-container">
-            <div class="image-card">
-                <img src="imagens/d11711-24-349978-3.jpg" alt="Criança estudando">
+        <!-- HERO SECTION -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Toda criança merece a chance de aprender, crescer e transformar o próprio futuro</h1>
+                <p>
+                    No Brasil, milhões de crianças em situação de vulnerabilidade social enfrentam barreiras diárias para ter acesso a uma educação de qualidade – seja pela falta de material escolar, ausência de apoio pedagógico no contraturno, falta de conectividade ou salas de aula inadequadas. A [Nome da ONG] atua diretamente na ponte dessa desigualdade, oferecendo materiais, tutoria gratuita e tecnologia para garantir que nenhuma criança fique para trás por falta de recursos.
+                </p>
             </div>
-        </div>
-    </section>
 
-    <!-- DESKTOP - 2: DEPOIMENTOS -->
+            <div class="hero-image-container">
+                <div class="image-card">
+                    <img src="imagens/d11711-24-349978-3.jpg" alt="Criança estudando">
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- DEPOIMENTOS -->
     <section class="depoimentos-section">
         <h2>Depoimentos dos nossos alunos</h2>
         <div class="cards-grid">

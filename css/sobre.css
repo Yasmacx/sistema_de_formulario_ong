@@ -2,16 +2,15 @@
    1. VARIÁVEIS GLOBAIS E PALETA DE CORES DO FIGMA
    ========================================================================== */
 :root {
-  /* Cores extraídas do protótipo */
-  --bg-green: #98ecba;        /* Verde mint do fundo/vetores */
-  --bg-cream: #f6f3e7;        /* Bege/Creme do fundo alternado */
-  --text-purple: #9c7cb7;     /* Roxo dos títulos arredondados */
-  --text-dark: #333333;       /* Texto do corpo */
-  --btn-light: #ffffff;       /* Fundo do botão Apoie */
-  
+  --bg-green: #98ecba;
+  --bg-cream: #f6f3e7;
+  --text-purple: #9c7cb7;
+  --text-dark: #333333;
+  --btn-light: #ffffff;
+
   --font-title: 'Fredoka', 'Comfortaa', 'Arial Rounded MT Bold', sans-serif;
   --font-body: 'Nunito', 'Segoe UI', sans-serif;
-  
+
   --radius-card: 28px;
   --radius-pill: 50px;
 }
@@ -34,6 +33,11 @@ a {
   color: inherit;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 /* ==========================================================================
    2. CABEÇALHO / MENU DE NAVEGAÇÃO
    ========================================================================== */
@@ -49,9 +53,15 @@ a {
   z-index: 10;
 }
 
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 1.8rem;
 }
 
@@ -66,21 +76,61 @@ a {
   opacity: 0.8;
 }
 
-/* Botão Apoie em Pílula */
+/* Botão "Apoie" com Responsividade e Animações */
+.btn-apoie,
 .nav-links .btn-apoie {
-  background-color: var(--btn-light);
-  color: var(--bg-green);
-  padding: 0.5rem 1.6rem;
-  border-radius: var(--radius-pill);
+  /* Cores Mantidas */
+  background-color: var(--cream-bg, var(--btn-light));
+  color: var(--purple-dark, var(--text-purple));
+  
+  /* Tipografia Responsiva (ajusta suavemente com o tamanho da tela) */
+  font-family: var(--font-body, sans-serif);
+  font-size: clamp(0.95rem, 2vw, 1.25rem);
   font-weight: 700;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Espaçamento e Formato Pílula */
+  padding: clamp(6px, 1.2vw, 8px) clamp(20px, 4vw, 36px);
+  border-radius: var(--radius-pill, 50px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+  /* Animações e Transição */
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.25s ease;
+  will-change: transform;
+}
+
+/* Animação no Hover (passar o mouse) */
+.btn-apoie:hover,
+.nav-links .btn-apoie:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Animação ao Clicar */
+.btn-apoie:active,
+.nav-links .btn-apoie:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Ajustes Específicos para Dispositivos Móveis */
+@media (max-width: 768px) {
+  .btn-apoie,
+  .nav-links .btn-apoie {
+    width: 100%; /* Ocupa a largura total caso esteja num menu mobile vertical */
+    max-width: 280px; /* Evita que fique exageradamente grande */
+    box-sizing: border-box;
+  }
 }
 
 /* ==========================================================================
-   3. ESTRUTURA DAS SEÇÕES E VETORES (DESKTOP 1 A 5)
+   3. ESTRUTURA DAS SEÇÕES E VETORES
    ========================================================================== */
-
-/* --- TÍTULOS ESTILIZADOS NO PADRÃO FIGMA --- */
 h1, h2, h3 {
   font-family: var(--font-title);
   color: var(--text-purple);
@@ -91,14 +141,12 @@ h1, h2, h3 {
 h1 { font-size: 3rem; margin-bottom: 2rem; }
 h2 { font-size: 2.4rem; margin-bottom: 1.5rem; }
 
-/* --------------------------------------------------------------------------
-   DESKTOP 1: SEÇÃO HERO / SOBRE NÓS
-   -------------------------------------------------------------------------- */
+/* --- HERO / SOBRE NÓS --- */
 .hero-section {
   position: relative;
   min-height: 100vh;
   background-color: var(--bg-green);
-  background-image: url('../imagens/vector\ verde\ sobre1.svg'); /* VETOR 1 */
+  background-image: url('../imagens/vector\ verde\ sobre1.svg');
   background-repeat: no-repeat;
   background-position: bottom right;
   background-size: cover;
@@ -115,7 +163,12 @@ h2 { font-size: 2.4rem; margin-bottom: 1.5rem; }
 }
 
 .hero-content h1 {
-  color: #ffffff; /* Título em branco na hero principal */
+  color: #ffffff;
+}
+
+.hero-content p {
+  font-size: 1.15rem;
+  line-height: 1.7;
 }
 
 .hero-image-container {
@@ -134,13 +187,11 @@ h2 { font-size: 2.4rem; margin-bottom: 1.5rem; }
   border-radius: var(--radius-card);
 }
 
-/* --------------------------------------------------------------------------
-   DESKTOP 2: NOSSA HISTÓRIA
-   -------------------------------------------------------------------------- */
+/* --- NOSSA HISTÓRIA --- */
 .historia-section {
   position: relative;
   background-color: var(--bg-cream);
-  background-image: url('../imagens/vector\ verde\ sobre2.svg'); /* VETOR 2 */
+  background-image: url('../imagens/vector\ verde\ sobre2.svg');
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
@@ -165,13 +216,11 @@ h2 { font-size: 2.4rem; margin-bottom: 1.5rem; }
   border-radius: var(--radius-card);
 }
 
-/* --------------------------------------------------------------------------
-   DESKTOP 3: MISSÃO
-   -------------------------------------------------------------------------- */
+/* --- MISSÃO --- */
 .missao-section {
   position: relative;
   background-color: var(--bg-cream);
-  background-image: url('../imagens/vector\ verde\ sobre3.svg'); /* VETOR 3 */
+  background-image: url('../imagens/vector\ verde\ sobre3.svg');
   background-repeat: no-repeat;
   background-position: bottom right;
   background-size: contain;
@@ -179,22 +228,26 @@ h2 { font-size: 2.4rem; margin-bottom: 1.5rem; }
   text-align: center;
 }
 
+.missao-section p {
+  color: var(--text-purple);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
 .missao-banner {
   width: 100%;
   max-width: 800px;
   height: 200px;
   object-fit: cover;
-  border-radius: 100px; /* Card oval de destaque */
+  border-radius: 100px;
   margin: 2rem auto;
 }
 
-/* --------------------------------------------------------------------------
-   DESKTOP 4: VISÃO E VALORES
-   -------------------------------------------------------------------------- */
+/* --- VISÃO E VALORES --- */
 .visao-valores-section {
   position: relative;
   background-color: var(--bg-cream);
-  background-image: url('../imagens/vector\ verde\ sobre4.svg'); /* VETOR 4 */
+  background-image: url('../imagens/vector\ verde\ sobre4.svg');
   background-repeat: no-repeat;
   background-position: right top;
   background-size: contain;
@@ -203,6 +256,11 @@ h2 { font-size: 2.4rem; margin-bottom: 1.5rem; }
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   align-items: center;
+}
+
+.visao-valores-section p {
+  color: var(--text-purple);
+  line-height: 1.7;
 }
 
 .valores-lista {
@@ -221,9 +279,7 @@ h2 { font-size: 2.4rem; margin-bottom: 1.5rem; }
   font-size: 1.1rem;
 }
 
-/* --------------------------------------------------------------------------
-   DESKTOP 5: NOSSOS PILARES (CARDS GRID)
-   -------------------------------------------------------------------------- */
+/* --- NOSSOS PILARES (CARDS) --- */
 .depoimentos-section {
   background-color: var(--bg-green);
   padding: 6rem 8%;
@@ -234,9 +290,10 @@ h2 { font-size: 2.4rem; margin-bottom: 1.5rem; }
   color: #ffffff;
 }
 
+/* Colunas se ajustam sozinhas: 3 cards cabem em linha no desktop */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -249,6 +306,7 @@ h2 { font-size: 2.4rem; margin-bottom: 1.5rem; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.75rem;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
 }
@@ -260,15 +318,17 @@ h2 { font-size: 2.4rem; margin-bottom: 1.5rem; }
   border-radius: 20px;
 }
 
+/* Título do card: roxo (verde claro sobre creme não dava contraste) */
 .depoimento-card p {
   font-family: var(--font-title);
   font-size: 1.3rem;
-  color: var(--bg-green);
+  color: var(--text-purple);
   margin-bottom: 0.5rem;
 }
 
 .depoimento-card span {
   font-size: 0.95rem;
+  line-height: 1.5;
   color: var(--text-dark);
 }
 
@@ -276,17 +336,29 @@ h2 { font-size: 2.4rem; margin-bottom: 1.5rem; }
    4. RESPONSIVIDADE
    ========================================================================== */
 @media (max-width: 850px) {
+  .main-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .hero-section {
+    padding-top: 11rem; /* espaço para o menu empilhado */
+  }
+
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.9rem; }
+
   .historia-section,
   .visao-valores-section {
     grid-template-columns: 1fr;
   }
-  
+
   .cards-grid {
     grid-template-columns: 1fr;
-  }
-  
-  .main-header {
-    flex-direction: column;
-    gap: 1rem;
   }
 }
