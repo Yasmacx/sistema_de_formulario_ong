@@ -1,20 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Lalezar&display=swap');
+
 /* ==========================================================================
    1. VARIÁVEIS GLOBAIS E PALETA DE CORES DO FIGMA
    ========================================================================== */
 :root {
-  --bg-green: #98ecba;
+  /* Cores */
+  --bg-green: #F6F1DE;
   --bg-cream: #f6f3e7;
   --text-purple: #9c7cb7;
   --text-dark: #333333;
   --btn-light: #ffffff;
+  --purple-main: #CE99E4;
+  --purple-dark: #A572B9;
+  --white: #FFFFFF;
 
-  --font-title: 'Fredoka', 'Comfortaa', 'Arial Rounded MT Bold', sans-serif;
-  --font-body: 'Nunito', 'Segoe UI', sans-serif;
-
+  /* Fontes (Padronizadas) */
+  --font-heading: 'Climate Crisis', cursive, sans-serif;  /* Títulos */
+  --font-body: 'Lalezar', cursive, sans-serif;            /* Textos */
+  
   --radius-card: 28px;
   --radius-pill: 50px;
 }
 
+/* ==========================================================================
+   2. RESET E ESTILOS GLOBAIS
+   ========================================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -39,52 +49,73 @@ img {
 }
 
 /* ==========================================================================
-   2. CABEÇALHO / MENU DE NAVEGAÇÃO
+   3. CABEÇALHO / MENU DE NAVEGAÇÃO
    ========================================================================== */
-.main-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 1.5rem 5%;
+.main-header,
+header {
+  background-color: #9FEECA !important;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 30px 80px;
+  width: 100%;
+}
+
+/* Mantém o cabeçalho acima das outras camadas da página */
+.main-header {
+  position: relative;
   z-index: 10;
 }
 
+/* Garante a cor do fundo também em elementos de topo/hero */
+.top-bar,
+.hero-wrapper {
+  background-color: #9FEECA !important;
+}
+
+/* Logo: altura fixa e largura proporcional */
 .logo img {
   height: 50px;
   width: auto;
 }
 
+/* Lista de links do menu: lado a lado com alinhamento e espaçamento */
 .nav-links {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 1.8rem;
+  gap: 32px;
 }
 
+/* Links do menu: padronizados */
 .nav-links a {
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 1rem;
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
   transition: opacity 0.2s ease;
 }
 
 .nav-links a:hover {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
-/* Botão "Apoie" com Responsividade e Animações */
+/* Regra específica para forçar links no cabeçalho */
+.main-header .nav-links a,
+.main-header a {
+  color: #FFFFFF !important;
+  font-family: 'Lalezar', cursive, sans-serif;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+/* Botão "Apoie" (Estilo Pílula e Animações) */
 .btn-apoie,
 .nav-links .btn-apoie {
-  /* Cores Mantidas */
-  background-color: var(--cream-bg, var(--btn-light));
+  background-color: var(--bg-cream, var(--btn-light));
   color: var(--purple-dark, var(--text-purple));
   
-  /* Tipografia Responsiva (ajusta suavemente com o tamanho da tela) */
-  font-family: var(--font-body, sans-serif);
+  font-family: var(--font-body);
   font-size: clamp(0.95rem, 2vw, 1.25rem);
   font-weight: 700;
   text-decoration: none;
@@ -93,89 +124,102 @@ img {
   align-items: center;
   justify-content: center;
 
-  /* Espaçamento e Formato Pílula */
   padding: clamp(6px, 1.2vw, 8px) clamp(20px, 4vw, 36px);
   border-radius: var(--radius-pill, 50px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 
-  /* Animações e Transição */
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
               box-shadow 0.25s ease;
   will-change: transform;
 }
 
-/* Animação no Hover (passar o mouse) */
 .btn-apoie:hover,
 .nav-links .btn-apoie:hover {
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
-/* Animação ao Clicar */
 .btn-apoie:active,
 .nav-links .btn-apoie:active {
   transform: translateY(0) scale(0.98);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
-/* Ajustes Específicos para Dispositivos Móveis */
-@media (max-width: 768px) {
-  .btn-apoie,
-  .nav-links .btn-apoie {
-    width: 100%; /* Ocupa a largura total caso esteja num menu mobile vertical */
-    max-width: 280px; /* Evita que fique exageradamente grande */
-    box-sizing: border-box;
-  }
+.main-header .btn-apoie {
+  background-color: #F6F1DE !important;
+  color: #A572B9 !important;
+  padding: 8px 36px;
+  border-radius: 25px;
+  font-family: 'Lalezar', cursive, sans-serif;
+  font-size: 1.25rem;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 /* ==========================================================================
-   3. ESTRUTURA DAS SEÇÕES E VETORES
+   4. ESTRUTURA DAS SEÇÕES E VETORES
    ========================================================================== */
 h1, h2, h3 {
-  font-family: var(--font-title);
+  font-family: var(--font-heading);
   color: var(--text-purple);
-  font-weight: 800;
   text-align: center;
 }
 
-h1 { font-size: 3rem; margin-bottom: 2rem; }
-h2 { font-size: 2.4rem; margin-bottom: 1.5rem; }
+h1 { 
+  font-size: 2.2rem; 
+  line-height: 1.15;
+  margin-bottom: 25px; 
+}
+
+h2 { 
+  font-size: 2.2rem; 
+  text-transform: uppercase;
+  margin-bottom: 60px; 
+}
 
 /* --- HERO / SOBRE NÓS --- */
 .hero-section {
   position: relative;
-  min-height: 100vh;
+  min-height: 700px;
   background-color: var(--bg-green);
   background-image: url('../imagens/vector\ verde\ sobre1.svg');
   background-repeat: no-repeat;
   background-position: bottom right;
   background-size: cover;
-  padding: 8rem 2rem 4rem 2rem;
+  padding: 40px 80px 160px 80px;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 .hero-content {
-  max-width: 800px;
-  text-align: center;
-  color: #ffffff;
+  max-width: 500px;
+  z-index: 5;
+  color: var(--white);
 }
 
 .hero-content h1 {
-  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 25px;
+  text-align: left;
 }
 
 .hero-content p {
-  font-size: 1.15rem;
-  line-height: 1.7;
+  font-family: var(--font-body);
+  font-size: 1.35rem;
+  line-height: 1.45;
+  color: var(--white);
+  font-weight: 400;
 }
 
 .hero-image-container {
+  position: relative;
+  z-index: 5;
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 2rem;
+  justify-content: center;
   width: 100%;
   max-width: 650px;
 }
@@ -195,18 +239,19 @@ h2 { font-size: 2.4rem; margin-bottom: 1.5rem; }
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
-  padding: 6rem 10%;
+  padding: 40px 80px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 35px;
   align-items: center;
 }
 
 .historia-texto p {
   color: var(--text-purple);
-  font-size: 1.05rem;
-  line-height: 1.7;
-  margin-bottom: 1rem;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin-bottom: 15px;
 }
 
 .historia-imagem img {
@@ -224,14 +269,15 @@ h2 { font-size: 2.4rem; margin-bottom: 1.5rem; }
   background-repeat: no-repeat;
   background-position: bottom right;
   background-size: contain;
-  padding: 6rem 10%;
+  padding: 40px 80px;
   text-align: center;
 }
 
 .missao-section p {
   color: var(--text-purple);
-  font-size: 1.05rem;
-  line-height: 1.7;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.4;
 }
 
 .missao-banner {
@@ -240,7 +286,7 @@ h2 { font-size: 2.4rem; margin-bottom: 1.5rem; }
   height: 200px;
   object-fit: cover;
   border-radius: 100px;
-  margin: 2rem auto;
+  margin: 25px auto;
 }
 
 /* --- VISÃO E VALORES --- */
@@ -251,26 +297,29 @@ h2 { font-size: 2.4rem; margin-bottom: 1.5rem; }
   background-repeat: no-repeat;
   background-position: right top;
   background-size: contain;
-  padding: 6rem 10%;
+  padding: 40px 80px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 35px;
   align-items: center;
 }
 
 .visao-valores-section p {
   color: var(--text-purple);
-  line-height: 1.7;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.4;
 }
 
 .valores-lista {
   list-style: none;
-  margin-top: 1rem;
+  margin-top: 15px;
 }
 
 .valores-lista li {
-  margin-bottom: 1rem;
+  margin-bottom: 15px;
   color: var(--text-purple);
+  font-family: var(--font-body);
   font-size: 0.95rem;
 }
 
@@ -279,34 +328,38 @@ h2 { font-size: 2.4rem; margin-bottom: 1.5rem; }
   font-size: 1.1rem;
 }
 
-/* --- NOSSOS PILARES (CARDS) --- */
+/* --- NOSSOS PILARES (CARDS DE DEPOIMENTOS) --- */
 .depoimentos-section {
   background-color: var(--bg-green);
-  padding: 6rem 8%;
+  padding: 40px 80px 160px 80px;
   text-align: center;
+  position: relative;
+  min-height: 700px;
 }
 
 .depoimentos-section h2 {
-  color: #ffffff;
+  color: var(--purple-main);
 }
 
-/* Colunas se ajustam sozinhas: 3 cards cabem em linha no desktop */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+  gap: 35px;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
 }
 
 .depoimento-card {
   background-color: var(--bg-cream);
-  padding: 2rem;
-  border-radius: var(--radius-card);
+  padding: 28px;
+  border-radius: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 15px;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
 }
@@ -318,44 +371,67 @@ h2 { font-size: 2.4rem; margin-bottom: 1.5rem; }
   border-radius: 20px;
 }
 
-/* Título do card: roxo (verde claro sobre creme não dava contraste) */
 .depoimento-card p {
-  font-family: var(--font-title);
-  font-size: 1.3rem;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.4;
   color: var(--text-purple);
-  margin-bottom: 0.5rem;
+  margin-bottom: 15px;
 }
 
 .depoimento-card span {
+  font-family: var(--font-body);
   font-size: 0.95rem;
   line-height: 1.5;
   color: var(--text-dark);
+  opacity: 0.9;
+  display: block;
 }
 
 /* ==========================================================================
-   4. RESPONSIVIDADE
+   5. RESPONSIVIDADE (telas de até 960px: tablet e mobile)
    ========================================================================== */
-@media (max-width: 850px) {
+@media (max-width: 960px) {
   .main-header {
     flex-direction: column;
-    gap: 1rem;
+    gap: 20px;
+    padding: 20px;
   }
 
-  .nav-links {
-    justify-content: center;
-    gap: 1rem;
+  .btn-apoie,
+  .nav-links .btn-apoie {
+    width: 100%;
+    max-width: 280px;
+    box-sizing: border-box;
   }
 
   .hero-section {
-    padding-top: 11rem; /* espaço para o menu empilhado */
+    flex-direction: column;
+    padding: 20px 20px 100px 20px;
+    text-align: center;
+    background-size: cover;
   }
 
-  h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.9rem; }
+  .hero-content {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .image-card img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
 
   .historia-section,
   .visao-valores-section {
     grid-template-columns: 1fr;
+    padding: 20px;
   }
 
   .cards-grid {
