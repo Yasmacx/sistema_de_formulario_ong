@@ -66,43 +66,13 @@ body {
 /* Barra do topo: fundo roxo, logo à esquerda e menu à direita (flex).
    O !important garante que o roxo prevaleça sobre outros estilos. */
 .main-header,
-header 
-/* ==========================================================================
-   2. CABEÇALHO / MENU DE NAVEGAÇÃO
-   ========================================================================== */
-.main-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 1.5rem 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10;
-}
-
-.logo img {
-  height: 50px;
-  width: auto;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1.8rem;
-}
-
-.nav-links a {
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: opacity 0.2s ease;
-}
-
-.nav-links a:hover {
-  opacity: 0.8;
+header {
+    background-color: #CE99E4 !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 80px;
+    width: 100%;
 }
 
 /* Mantém o cabeçalho acima das outras camadas da página. */
@@ -364,7 +334,7 @@ header
     }
 
     .hero-content h1 {
-        font-size: 1.6rem;
+        font-size: 1.6rem;  
     }
 
     /* Imagem se adapta à largura da tela. */
