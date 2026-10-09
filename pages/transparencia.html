@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Transparência | [Nome da ONG]</title>
-<meta name="description" content="Acompanhe como os recursos da [Nome da ONG] são aplicados: programas, indicadores, documentos e governança.">
+<title>Transparência | Rede de Apoio</title>
+<meta name="description" content="Acompanhe como os recursos da organização são aplicados: programas, indicadores, documentos e governança.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Lalezar&display=swap" rel="stylesheet">
@@ -14,38 +14,49 @@
     --menta: #9FEECA;
     --creme: #F6F1DE;
     --lilas: #CE99E4;
-    --fonte-titulo: "Climate Crisis", "Arial Black", sans-serif;
-    --fonte-texto: "Lalezar", "Arial Rounded MT Bold", sans-serif;
-    --h2: clamp(26px, 3.9vw, 58px);
-    --h3: clamp(20px, 2.6vw, 38px);
-    --texto: clamp(17px, 1.65vw, 24px);}
+    --lilas-botao: #C78DE0;
+    --verde: #9FEECA;
+    --verde-claro: #BBEDD6;
+    --verde-texto: #789C8C;
+    --fonte-titulo: "Climate Crisis", sans-serif;
+    --fonte-texto: "Lalezar", sans-serif;
+}
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 
-html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+html { 
+    scroll-behavior: smooth; 
+    scroll-padding-top: 90px; 
+}
 
 body {
     background: var(--menta);
     color: var(--creme);
     font-family: var(--fonte-texto);
-    font-size: var(--texto);
+    font-size: 20px;
     line-height: 1.9;
     overflow-x: hidden;
 }
 
-img { display: block; max-width: 100%; height: auto; }
+img { 
+    display: block; 
+    max-width: 100%; 
+    height: auto; 
+}
 
 h1, h2, h3 {
     font-family: var(--fonte-titulo);
     font-weight: 400;
     line-height: 1.2;
-    color: var(--creme);
 }
 
-h2 { font-size: var(--h2); text-align: center; }
-h3 { font-size: var(--h3); }
-
-a { color: inherit; }
+a { 
+    color: inherit; 
+}
 
 .container {
     width: min(1180px, 100% - 64px);
@@ -54,242 +65,26 @@ a { color: inherit; }
     z-index: 2;
 }
 
-section { position: relative; overflow: hidden; }
-
-/* formas decorativas lilás */
-.forma { position: absolute; z-index: 0; pointer-events: none; user-select: none; }
-
-/* =========================
-   NAVBAR
-========================= */
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: var(--menta);
-    padding: 22px clamp(20px, 4.5vw, 64px);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-}
-
-.logo img { width: 62px; height: auto; }
-
-.menu {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: clamp(20px, 3.4vw, 56px);
-}
-
-.menu a {
-    text-decoration: none;
-    color: var(--creme);
-    font-size: clamp(18px, 1.9vw, 26px);
-    line-height: 1;
-    transition: opacity .2s;
-}
-
-.menu a:hover { opacity: .7; }
-
-.menu .apoie {
-    color: var(--lilas);
-    background: var(--creme);
-    padding: 17px 38px;
-    border-radius: 16px;
-    transition: transform .2s;
-}
-
-.menu .apoie:hover { opacity: 1; transform: translateY(-2px); }
-
-.menu-toggle {
-    margin-left: auto;
-    display: none;
-    background: none;
-    border: 0;
-    cursor: pointer;
-    width: 44px;
-    height: 44px;
-    position: relative;
-}
-
-.menu-toggle span,
-.menu-toggle span::before,
-.menu-toggle span::after {
-    content: "";
-    position: absolute;
-    left: 8px;
-    width: 28px;
-    height: 3px;
-    border-radius: 3px;
-    background: var(--creme);
-    transition: .25s;
-}
-.menu-toggle span { top: 20px; }
-.menu-toggle span::before { left: 0; top: -9px; }
-.menu-toggle span::after { left: 0; top: 9px; }
-
-/* =========================
-   HERO
-========================= */
-.hero { padding: clamp(50px, 7vw, 110px) 0 clamp(120px, 20vw, 290px); }
-
-.hero h1 {
-    font-size: clamp(26px, 3.9vw, 58px);
-    text-align: center;
-    margin-bottom: clamp(50px, 7vw, 110px);
-}
-
-.hero .forma.topo  { top: 0; right: 0; width: min(24vw, 340px); }
-.hero .forma.base  { bottom: 0; left: 0; width: min(36vw, 520px); }
-
-.hero-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
-    gap: clamp(30px, 6vw, 100px);
-    max-width: 1100px;
-    margin-inline: auto;
-}
-
-.hero-texto p + p { margin-top: 1.2em; }
-.hero-texto { line-height: 2; }
-
-.hero-foto { width: clamp(220px, 28vw, 403px); }
-
-/* =========================
-   PROGRAMAS
-========================= */
-.programas { padding: clamp(60px, 7vw, 110px) 0 clamp(110px, 16vw, 230px); }
-
-.programas .forma.base      { bottom: 0; left: 0; width: min(26vw, 380px); }
-
-.programas h2 { max-width: 900px; margin: 0 auto 28px; }
-
-.programas .intro { text-align: center; max-width: 900px; margin: 0 auto clamp(50px, 6vw, 90px); }
-
-.programa {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(24px, 4vw, 64px);
-    margin-bottom: clamp(36px, 5vw, 70px);
-}
-
-.programa:last-child { margin-bottom: 0; }
-
-.programas .forma.materiais { top: 0; left: 0; width: min(22vw, 320px); }
-
-.programa.invertido { flex-direction: row-reverse; }
-
-.programa img { flex: 0 0 auto; }
-
-.programa .texto { flex: 0 1 600px; }
-
-.programa h3 { margin-bottom: 8px; }
-
-.programa ul { list-style: disc; padding-left: 1.3em; }
-
-.programa.invertido .texto { text-align: right; }
-.programa.invertido ul { list-style-position: inside; padding-left: 0; }
-
-/* =========================
-   NOSSOS RECURSOS
-========================= */
-.recursos { padding: clamp(60px, 7vw, 110px) 0 clamp(80px, 9vw, 140px); }
-
-.recursos .forma { right: 0; top: 0; width: min(26vw, 380px); }
-
-.recursos-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(40px, 6vw, 100px);
-    align-items: start;
-}
-
-.recursos h2 { text-align: left; margin-bottom: 30px; }
-
-.recursos .coluna p + p { margin-top: 1.2em; }
-
-.indicadores { list-style: disc; padding-left: 1.4em; margin: 18px 0 26px; }
-
-.indicadores b { font-weight: 400; }
-
-.recursos h3 { margin-bottom: 14px; }
-
-/* =========================
-   TRANSPARÊNCIA / DOCUMENTOS
-========================= */
-.transparencia { padding: clamp(60px, 7vw, 110px) 0 clamp(90px, 10vw, 160px); }
-
-.transparencia .forma { right: 0; bottom: 0; width: min(20vw, 290px); transform: scaleX(-1); }
-
-.transparencia .intro {
-    max-width: 1060px;
-    margin: 26px auto clamp(60px, 8vw, 120px);
-    text-align: center;
-}
-
-.transparencia h2.docs { margin-bottom: clamp(30px, 4vw, 60px); }
-
-.documentos {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: clamp(30px, 5vw, 80px);
-    align-items: center;
-    max-width: 1100px;
-    margin-inline: auto;
-}
-
-.documentos .lista-titulo { margin-bottom: 4px; }
-
-.documentos ul { list-style: disc; padding-left: 1.5em; }
-
-.documentos ul + .links { margin-top: 10px; }
-
-.links { display: flex; flex-direction: column; align-items: flex-start; }
-
-.links a {
-    text-decoration: none;
-    line-height: 1.9;
-    transition: opacity .2s, transform .2s;
-}
-
-.links a:hover { opacity: .75; transform: translateX(4px); }
-
-.documentos .foto { width: clamp(260px, 34vw, 480px); }
-
-/* =========================
-   GOVERNANÇA + CONTATO
-========================= */
-.final { padding: clamp(60px, 7vw, 110px) 0 clamp(90px, 10vw, 150px); }
-
-.final .forma.topo { top: 0; left: 0; width: min(49vw, 702px); }
-.final .forma.base { bottom: 0; right: 0; width: min(53vw, 770px); }
-
-.final .texto-centro { max-width: 1000px; margin-inline: auto; text-align: center; }
-
-.final h2 { margin-bottom: 28px; }
-
-.governanca { margin-bottom:
-    color white;
-    font-family: "Lalezar", sans-serif;
-    overflow-x: hidden;
+section { 
+    position: relative; 
+    overflow: hidden; 
 }
 
 /* =========================
-   NAVBAR
+   NAVBAR (Padronizada)
 ========================= */
 .navbar {
     width: 100%;
     min-height: 150px;
     padding: 0 6%;
     background: var(--creme);
-
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
 }
 
 .logo {
@@ -363,26 +158,13 @@ section { position: relative; overflow: hidden; }
     text-align: center;
     position: relative;
     overflow: hidden;
-}
-
-.hero::after {
-    content: "";
-    position: absolute;
-    width: 62vw;
-    height: 62vw;
-    max-width: 900px;
-    max-height: 900px;
-    right: -32vw;
-    top: -45vw;
-    background: var(--lilas);
-    border-radius: 0 0 0 100%;
-    opacity: .95;
+    padding: clamp(50px, 7vw, 110px) 0;
 }
 
 .hero h1 {
     position: relative;
     z-index: 2;
-    font-family: "Climate Crisis", sans-serif;
+    font-family: var(--fonte-titulo);
     font-size: clamp(52px, 7vw, 100px);
     font-weight: 400;
     color: white;
@@ -407,7 +189,7 @@ section { position: relative; overflow: hidden; }
 }
 
 .section h2 {
-    font-family: "Climate Crisis", sans-serif;
+    font-family: var(--fonte-titulo);
     font-weight: 400;
     color: white;
     font-size: clamp(38px, 5vw, 68px);
@@ -444,7 +226,7 @@ section { position: relative; overflow: hidden; }
 
 .recurso h3 {
     color: white;
-    font-family: "Climate Crisis", sans-serif;
+    font-family: var(--fonte-titulo);
     font-size: 27px;
     font-weight: 400;
     margin-bottom: 16px;
@@ -475,7 +257,7 @@ section { position: relative; overflow: hidden; }
 .indicador strong {
     display: block;
     color: var(--lilas);
-    font-family: "Climate Crisis", sans-serif;
+    font-family: var(--fonte-titulo);
     font-size: 32px;
     font-weight: 400;
     margin-bottom: 12px;
@@ -506,7 +288,7 @@ section { position: relative; overflow: hidden; }
 
 .documentos-box h3 {
     color: var(--lilas);
-    font-family: "Climate Crisis", sans-serif;
+    font-family: var(--fonte-titulo);
     font-size: 30px;
     font-weight: 400;
     margin-bottom: 25px;
@@ -541,30 +323,6 @@ section { position: relative; overflow: hidden; }
     background: var(--verde);
 }
 
-.governanca::before {
-    content: "";
-    position: absolute;
-    left: -20%;
-    top: 0;
-    width: 62%;
-    height: 62%;
-    background: var(--lilas);
-    border-radius: 0 0 100% 0;
-    opacity: .95;
-}
-
-.governanca::after {
-    content: "";
-    position: absolute;
-    right: -20%;
-    bottom: -20%;
-    width: 62%;
-    height: 62%;
-    background: var(--lilas);
-    border-radius: 100% 0 0 0;
-    opacity: .95;
-}
-
 .governanca-card {
     margin-top: 50px;
     padding: 45px;
@@ -583,6 +341,7 @@ section { position: relative; overflow: hidden; }
     min-height: 70vh;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .contato-card {
@@ -691,17 +450,19 @@ section { position: relative; overflow: hidden; }
 
 <header class="navbar">
     <div class="logo">
-        <img src="data:image/png;base64,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" alt="Logo da organização">
+        <a href="../index.html">
+            <img src="../imagens/logo-branca.svg" alt="Logo da organização">
+        </a>
     </div>
 
     <nav>
         <ul class="menu">
-            <li><a href="#inicio">Sobre Nós</a></li>
-            <li><a href="#recursos">Programas</a></li>
-            <li><a href="#documentos">Como ajudar</a></li>
-            <li><a href="#transparencia">Transparência</a></li>
-            <li><a href="#contato">Contato</a></li>
-            <li><a class="apoie" href="#contato">Apoie</a></li>
+            <li><a href="../index.html">Sobre Nós</a></li>
+            <li><a href="programas.html">Programas</a></li>
+            <li><a href="como-ajudar.html">Como ajudar</a></li>
+            <li><a href="transparencia.html">Transparência</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a class="apoie" href="apoie.html">Apoie</a></li>
         </ul>
     </nav>
 </header>
@@ -829,15 +590,10 @@ section { position: relative; overflow: hidden; }
 
         <div class="governanca-card">
             <p>
-                Nossa estrutura de governança é formada por [apresentar
-                diretoria, conselho fiscal e demais órgãos aplicáveis],
+                Nossa estrutura de governança é formada por diretoria, conselho fiscal e demais órgãos aplicáveis,
                 responsáveis por acompanhar a gestão da organização e
                 contribuir para uma atuação responsável e alinhada à nossa
                 missão.
-            </p>
-
-            <p style="margin-top: 25px;">
-                [Conheça nossa estrutura de governança]
             </p>
         </div>
     </div>
@@ -855,8 +611,6 @@ section { position: relative; overflow: hidden; }
 
         <a href="mailto:contato@ong.org">
             Entre em contato
-
-            
         </a>
     </div>
 </section>
