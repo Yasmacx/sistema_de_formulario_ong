@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Fredoka', sans-serif;
+    background: #c889df;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+
+/* MENU */
+
+.menu {
+    width: 100%;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 6%;
+
+    gap: 25px;
+
+    background: transparent;
+}
+
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+.menu nav {
+    display: flex;
+    gap: 28px;
+    flex: 1;
+}
+
+
+.menu nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+.botao-apoie {
+    background: #f4f0d9;
+    color: #c889df;
+
+    padding: 11px 28px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+/* INTRODUÇÃO */
+
+.introducao {
+    padding: 20px 5% 35px;
+    max-width: 650px;
+}
+
+
+.introducao h1 {
+    font-size: 52px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+
+.introducao p {
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+
+/* APOIO FINANCEIRO */
+
+.apoio-financeiro {
+    background: #f5f0dc;
+    color: #8e58ad;
+
+    margin: 0 6%;
+    padding: 22px;
+
+    border-radius: 40px;
+}
+
+
+.apoio-financeiro h2 {
+    text-align: center;
+    font-size: 23px;
+    margin-bottom: 18px;
+}
+
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px;
+}
+
+
+.card {
+    text-align: center;
+}
+
+
+.valor {
+    display: block;
+
+    background: #aee8d3;
+
+    color: #c889df;
+
+    padding: 7px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    margin-bottom: 10px;
+}
+
+
+.card-texto {
+    background: #b1e7d2;
+
+    min-height: 100px;
+
+    padding: 18px;
+
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.card-texto p {
+    color: #6c9c8c;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* DOAÇÃO */
+
+.doacao {
+    padding: 70px 6% 40px;
+}
+
+
+.doacao h2 {
+    text-align: center;
+
+    font-size: 40px;
+
+    margin-bottom: 45px;
+}
+
+
+.doacao-conteudo {
+    background: #f5f0dc;
+
+    color: #8e58ad;
+
+    border-radius: 30px;
+
+    padding: 30px 35px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+}
+
+
+.texto-doacao {
+    flex: 1;
+}
+
+
+.texto-doacao h3 {
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+
+.texto-doacao p {
+    color: #709c8e;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 15px;
+}
+
+
+.texto-doacao strong {
+    color: #c889df;
+}
+
+
+.doacao-conteudo img {
+    width: 180px;
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 25px;
+}
+
+
+/* VOLUNTARIADO */
+
+.voluntariado {
+    padding: 50px 6% 80px;
+}
+
+
+.voluntariado h2 {
+    font-size: 38px;
+
+    margin-bottom: 25px;
+}
+
+
+.voluntariado p {
+    max-width: 650px;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin-bottom: 12px;
+}
+
+
+.voluntariado strong {
+    color: #f5f0dc;
+}
+
+
+.voluntariado img {
+    display: block;
+
+    width: 80%;
+
+    max-width: 850px;
+
+    height: 280px;
+
+    object-fit: cover;
+
+    margin: 35px auto 0;
+
+    border-radius: 60px;
+}
+
+
+/* PRÓXIMO PASSO */
+
+.proximo-passo {
+    background: #c889df;
+
+    padding: 60px 6% 100px;
+
+    border-radius: 50% 50% 0 0 / 20% 20% 0 0;
+}
+
+
+.proximo-passo h2 {
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+
+.proximo-passo > p {
+    font-size: 15px;
+
+    margin-bottom: 40px;
+}
+
+
+.opcao {
+    display: flex;
+    flex-direction: column;
+
+    width: 300px;
+
+    margin-bottom: 25px;
+}
+
+
+.opcao span {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+
+.opcao button {
+    border: none;
+
+    background: #f5f0dc;
+
+    color: #c889df;
+
+    padding: 15px;
+
+    border-radius: 7px;
+
+    font-family: 'Fredoka', sans-serif;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.opcao button:hover {
+    transform: scale(1.02);
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 800px) {
+
+    .menu {
+        height: auto;
+        padding: 20px;
+        flex-wrap: wrap;
+    }
+
+
+    .menu nav {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+
+    .introducao {
+        padding: 30px 7%;
+    }
+
+
+    .introducao h1 {
+        font-size: 40px;
+    }
+
+
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+
+    .apoio-financeiro {
+        margin: 0 4%;
+    }
+
+
+    .doacao-conteudo {
+        flex-direction: column;
+    }
+
+
+    .doacao-conteudo img {
+        width: 100%;
+        height: 220px;
+    }
+
+
+    .voluntariado img {
+        width: 100%;
+        height: 230px;
+        border-radius: 35px;
+    }
+
+}

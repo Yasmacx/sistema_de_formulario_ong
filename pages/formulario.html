@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Inscrição - Seja um Voluntário</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/como-ajudar.css">
+    <style>
+        body.pagina-formulario {
+            background-color: #CE99E4;
+            color: #F6F1DE;
+            margin: 0;
+            padding: 40px 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        .container-formulario {
+            background-color: #8ce5bc;
+            border-radius: 35px;
+            padding: 45px;
+            width: 100%;
+            max-width: 850px;
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+        }
+        .container-formulario h1 {
+            text-align: center;
+            color: #F6F1DE;
+            font-size: 32px;
+            margin-bottom: 8px;
+            text-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+        }
+        .container-formulario p.sub {
+            text-align: center;
+            color: #F6F1DE;
+            font-size: 15px;
+            margin-bottom: 35px;
+            line-height: 1.5;
+        }
+        .grid-campos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        .campo-grupo {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .campo-grupo label {
+            font-weight: bold;
+            color: #F6F1DE;
+            font-size: 16px;
+        }
+        .campo-grupo input, .campo-grupo textarea {
+            background-color: #F4F4F4;
+            border: none;
+            padding: 16px;
+            border-radius: 14px;
+            font-size: 14px;
+            color: #777;
+            outline: none;
+            box-sizing: border-box;
+            width: 100%;
+        }
+        .campo-grupo textarea {
+            resize: vertical;
+            height: 90px;
+        }
+        .btn-enviar-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 35px;
+        }
+        .btn-enviar {
+            background-color: #CE99E4;
+            color: #F6F1DE;
+            border: none;
+            padding: 16px 50px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+            transition: background 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-enviar:hover {
+            background-color: #bc82d4;
+        }
+        .voltar-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #F6F1DE;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body class="pagina-formulario">
+
+    <div class="container-formulario">
+        <h1>Ficha de Inscrição: Seja um Voluntário</h1>
+        <p class="sub">Transforme o futuro de uma criança com o seu tempo e talento!<br>Preencha os campos abaixo para integrar a nossa equipa de voluntários.</p>
+
+        <form action="#" method="POST">
+            <div class="grid-campos">
+                <div class="campo-grupo">
+                    <label>Nome Completo:</label>
+                    <input type="text" placeholder="Insira o seu nome completo..." required>
+                </div>
+
+                <div class="campo-grupo">
+                    <label>Área de Atuação Desejada:</label>
+                    <input type="text" placeholder="Ex: Tutoria ou Tecnologia..." required>
+                </div>
+
+                <div class="campo-grupo">
+                    <label>E-mail:</label>
+                    <input type="email" placeholder="O seu melhor e-mail..." required>
+                </div>
+
+                <div class="campo-grupo">
+                    <label>Disponibilidade de Horário:</label>
+                    <input type="text" placeholder="Ex: Finais de semana..." required>
+                </div>
+
+                <div class="campo-grupo">
+                    <label>Telemóvel / WhatsApp:</label>
+                    <input type="tel" placeholder="(11) 99999-9999" required>
+                </div>
+
+                <div class="campo-grupo">
+                    <label>Por que quer ser voluntário na nossa ONG?</label>
+                    <textarea placeholder="Conte-nos um pouco sobre a sua motivação..."></textarea>
+                </div>
+            </div>
+
+            <div class="btn-enviar-container">
+                <button type="submit" class="btn-enviar">Enviar Inscrição de Voluntário</button>
+            </div>
+        </form>
+
+        <a href="como-ajudar.html" class="voltar-link">← Voltar para a página Como Ajudar</a>
+    </div>
+
+</body>
+</html>

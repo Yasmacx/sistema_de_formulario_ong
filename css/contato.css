@@ -1,0 +1,185 @@
+/* ===== CABEÇALHO / MENU DE NAVEGAÇÃO ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 60px;
+    background-color: #F6F1DE;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 86px;
+    height: auto;
+    display: block;
+}
+
+/* Links do menu */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #6B3F7E;
+    font-weight: 700;
+    font-size: 22px;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #8C5B9E;
+}
+
+/* Página atual */
+.nav-links a.ativo {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+/* Botão Apoie */
+.btn-apoie {
+    background-color: #6B3F7E;
+    color: #FFFFFF;
+    padding: 10px 28px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.2s;
+}
+
+.btn-apoie:hover {
+    background-color: #8C5B9E;
+}
+
+/* ===== PÁGINA DE CONTATO ===== */
+.secao-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+    box-sizing: border-box;
+}
+
+.secao-container h2 {
+    text-align: center;
+    color: #F6F1DE;
+    font-size: 36px;
+    margin: 30px 0 10px;
+}
+
+.sub-texto-centro {
+    text-align: center;
+    color: #F6F1DE;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+/* Cartão bege */
+.bloco-card-principal {
+    background-color: #F6F1DE;
+    border-radius: 30px;
+    padding: 35px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+}
+
+/* Formulário */
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+.form-grupo label {
+    color: #6B3F7E;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.form-grupo input,
+.form-grupo textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #BBEDD6;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    font-family: inherit;
+    font-size: 15px;
+    color: #4A4A4A;
+    box-sizing: border-box;
+}
+
+.form-grupo input:focus,
+.form-grupo textarea:focus {
+    outline: none;
+    border-color: #8C5B9E;
+}
+
+.form-grupo textarea {
+    resize: vertical;
+}
+
+/* Botões */
+.botoes-formulario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn-verde-acao {
+    display: inline-block;
+    background-color: #BBEDD6;
+    color: #6B3F7E;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 14px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.2s;
+}
+
+.btn-verde-acao:hover {
+    background-color: #9fdcbf;
+}
+
+/* Outras formas de contato */
+.linha-contato-info {
+    margin-bottom: 18px;
+}
+
+.linha-contato-info strong {
+    color: #6B3F7E;
+    font-size: 17px;
+}
+
+.linha-contato-info p {
+    margin: 4px 0 0;
+    color: #4A4A4A;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.botao-voltar {
+    text-align: center;
+    margin-top: 25px;
+}

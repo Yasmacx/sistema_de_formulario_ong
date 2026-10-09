@@ -1,69 +1,165 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato - ONG</title>
+
+    <title>Contato - Instituto Educar para Transformar</title>
+
+    <!-- Arquivos CSS -->
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/contato.css">
 </head>
+
 <body>
 
-    <!-- NAV / HEADER (Comum a todas as abas) -->
-    <header class="main-header">
-        <div class="logo">
-            <a href="../index.html"><img src="../assets/images/logo.svg" alt="Logo ONG"></a>
+    <!-- Menu de navegação -->
+    <header class="navbar">
+
+        <div class="logo-container">
+            <a href="../index.html">
+                <img
+                    src="../imagens/logo-roxa.svg"
+                    alt="Logotipo do Instituto Educar para Transformar"
+                    class="logo">
+            </a>
         </div>
+
         <nav class="nav-links">
+            <a href="../index.html">Início</a>
             <a href="sobre.html">Sobre Nós</a>
             <a href="programas.html">Programas</a>
             <a href="como-ajudar.html">Como ajudar</a>
             <a href="transparencia.html">Transparência</a>
-            <a href="contato.html" class="active">Contato</a>
+            <a href="contato.html" class="ativo">Contato</a>
         </nav>
-        <a href="como-ajudar.html" class="btn-apoie">Apoie</a>
+
+        <a href="apoie.html" class="btn-apoie">Apoie</a>
+
     </header>
 
-    <!-- CONTEÚDO PRINCIPAL: FORMULÁRIO DE CONTATO -->
-    <main class="contato-container">
-        <section class="form-section">
-            <div class="form-card">
-                <h2>Fale Conosco</h2>
-                <p>Preencha o formulário abaixo para entrar em contato com a nossa equipe.</p>
+    <!-- Conteúdo principal -->
+    <main class="secao-container">
 
-                <form action="#" method="POST" class="contact-form">
-                    <div class="input-group">
-                        <label for="nome">Nome Completo</label>
-                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
-                    </div>
+        <!-- Fale Conosco -->
+        <h2>Fale Conosco</h2>
 
-                    <div class="input-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
-                    </div>
+        <p class="sub-texto-centro">
+            Envie uma Mensagem!<br>
+            Preencha o formulário abaixo e a nossa equipe responderá o mais brevemente possível:
+        </p>
 
-                    <div class="input-group">
-                        <label for="assunto">Assunto</label>
-                        <select id="assunto" name="assunto" required>
-                            <option value="" disabled selected>Selecione um assunto</option>
-                            <option value="duvidas">Dúvidas gerais</option>
-                            <option value="voluntariado">Seja um voluntário</option>
-                            <option value="doacao">Doações e Parcerias</option>
-                            <option value="outro">Outro</option>
-                        </select>
-                    </div>
+        <!-- Formulário de contato -->
+        <div class="bloco-card-principal formulario-card">
 
-                    <div class="input-group">
-                        <label for="mensagem">Mensagem</label>
-                        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
-                    </div>
+            <form action="#" method="POST">
 
-                    <button type="submit" class="btn-submit">Enviar Mensagem</button>
-                </form>
+                <div class="form-grupo">
+                    <label for="nome">Nome Completo:</label>
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        placeholder="Insira o seu nome"
+                        required>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="email">E-mail:</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Insira o seu e-mail"
+                        required>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="assunto">Assunto:</label>
+                    <input
+                        type="text"
+                        id="assunto"
+                        name="assunto"
+                        placeholder="Selecione: Dúvidas / Parcerias / Voluntariado / Imprensa / Outro"
+                        required>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea
+                        id="mensagem"
+                        name="mensagem"
+                        rows="4"
+                        placeholder="Escreva aqui a sua mensagem..."
+                        required></textarea>
+                </div>
+
+                <!-- Botões do formulário -->
+                <div class="botoes-formulario">
+
+                    <button type="submit" class="btn-verde-acao">
+                        Enviar Mensagem
+                    </button>
+
+                    <button type="reset" class="btn-verde-acao">
+                        Excluir
+                    </button>
+
+                    <a href="../index.html" class="btn-verde-acao">
+                        Voltar à Página Inicial
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <!-- Outras formas de contato -->
+        <h2>Outras Formas de Contato</h2>
+
+        <p class="sub-texto-centro">
+            Se preferir, pode falar conosco diretamente através dos nossos canais oficiais:
+        </p>
+
+        <div class="bloco-card-principal contato-card">
+
+            <div class="linha-contato-info">
+                <strong>E-mail:</strong>
+                <p>contacto@educarparatransformar.org</p>
             </div>
-        </section>
+
+            <div class="linha-contato-info">
+                <strong>Telefone / WhatsApp:</strong>
+                <p>(11) 99660-3856</p>
+            </div>
+
+            <div class="linha-contato-info">
+                <strong>Endereço:</strong>
+                <p>Av. Paulista, 1415 - Bela Vista, São Paulo - SP</p>
+            </div>
+
+            <div class="linha-contato-info">
+                <strong>Redes Sociais:</strong>
+                <p>
+                    Acompanhe o nosso dia a dia e veja o impacto do nosso trabalho
+                    no Instagram e no LinkedIn (@EducarParaTransformar).
+                </p>
+            </div>
+
+            <!-- Botão para voltar à página inicial -->
+            <div class="botao-voltar">
+                <a href="../index.html" class="btn-verde-acao">
+                    Voltar à Página Inicial
+                </a>
+            </div>
+
+        </div>
+
     </main>
 
 </body>
+
 </html>

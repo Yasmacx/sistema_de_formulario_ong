@@ -1,0 +1,312 @@
+/* Configuração Geral da Página */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #CE99E4;
+    color: #F6F1DE;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Cada tela/seção ocupa exatamente 100% da altura da tela e fica bem separada */
+.secao-tela {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    padding: 30px 60px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #CE99E4;
+    overflow: hidden;
+}
+
+/* Forma orgânica verde nos cantos (igualzinho ao Figma) */
+.secao-tela::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    background-color: #BBEDD6;
+    clip-path: ellipse(100% 90% at 100% 0%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Inverte o lado da forma verde nas telas alternadas */
+.secao-tela.inverter::before {
+    left: 0;
+    right: auto;
+    clip-path: ellipse(100% 90% at 0% 100%);
+}
+
+/* Conteúdo interno alinhado */
+.secao-tela > * {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* --- HEADER / TOPO --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background-color: #CE99E4;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #F6F1DE;
+    font-weight: 600;
+    font-size:  22px;;
+}
+
+.btn-apoie {
+    background-color: #F6F1DE;
+    color: #8C5B9E;
+    padding: 8px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Adiciona margem superior na primeira tela para o menu fixo não cobrir o texto */
+.primeira-tela {
+    padding-top: 100px;
+}
+
+/* --- TELA 1: COMO AJUDAR --- */
+.conteudo-principal h1 {
+    font-size: 42px;
+    color: #F6F1DE;
+    margin-bottom: 10px;
+}
+
+.conteudo-principal p {
+    font-size: 15px;
+    color: #F6F1DE;
+    max-width: 650px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Caixa Bege Principal */
+.card-container {
+    background-color: #F6F1DE;
+    border-radius: 30px;
+    padding: 30px;
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.08);
+}
+
+.card-container h2 {
+    text-align: center;
+    color: #8C5B9E;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.card {
+    background-color: #BBEDD6;
+    padding: 18px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.tag-card {
+    display: inline-block;
+    background-color: #FFFFFF;
+    color: #8C5B9E;
+    padding: 5px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 12px;
+    line-height: 1.4;
+    color: #4A4A4A;
+    margin: 0;
+}
+
+/* --- TELA 2: DOAÇÃO DE MATERIAIS --- */
+.conteudo-duas-colunas {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.texto-materiais {
+    flex: 1.2;
+}
+
+.texto-materiais h3 {
+    color: #8C5B9E;
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.texto-materiais p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: #4A4A4A;
+    font-size: 14px;
+}
+
+.imagem-materiais {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+}
+
+.imagem-materiais img {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+
+/* --- TELA 3: SEJA UM VOLUNTÁRIO --- */
+.bloco-voluntario {
+    max-width: 900px;
+    margin-bottom: 20px;
+}
+
+.bloco-voluntario h2 {
+    color: #F6F1DE;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.bloco-voluntario p {
+    color: #F6F1DE;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    font-size: 14px;
+}
+
+.banner-voluntario-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.banner-voluntario-img img {
+    width: 100%;
+    max-width: 900px;
+    height: 220px;
+    border-radius: 25px;
+    object-fit: cover;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+
+/* --- TELA 4: PRÓXIMO PASSO --- */
+.secao-proximo-passo {
+    text-align: center;
+    align-items: center;
+}
+
+.secao-proximo-passo h2 {
+    color: #F6F1DE;
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+.subtitulo-passo {
+    color: #F6F1DE;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.acoes-finais {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 420px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.bloco-acao {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: left;
+}
+
+.bloco-acao span {
+    font-weight: bold;
+    color: #F6F1DE;
+    font-size: 12px;
+}
+
+.btn-acao {
+    background-color: #F6F1DE;
+    color: #8C5B9E;
+    padding: 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.05);
+}
+
+/* Organiza a Tela 4 em duas colunas (Texto/Botões e Imagem) */
+.conteudo-duas-colunas-proximo-passo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.texto-proximo-passo {
+    flex: 1.2;
+}
+
+.imagem-proximo-passo {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+}
+
+.imagem-proximo-passo img {
+    width: 100%;
+    max-width: 580px;
+    border-radius: 25px;
+    object-fit: cover;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
