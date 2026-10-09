@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programas em Destaque</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Lalezar&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F6F1DE;
+    color: #B96DDB;
+    font-family: "Lalezar", sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    width: 100%;
+    min-height: 150px;
+    padding: 0 6%;
+    background-color: #F6F1DE;
+
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+/* UMA ÚNICA LOGO */
+.logo {
+    width: 65px;
+    height: 65px;
+    flex: 0 0 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    display: block;
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+/* NAV ocupa o espaço restante */
+.navbar nav {
+    flex: 1;
+    min-width: 0;
+}
+
+.menu {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    list-style: none;
+
+    /* NUNCA quebra para outra linha */
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.menu li {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+.menu a {
+    display: inline-block;
+
+    color: #C48AE0;
+    text-decoration: none;
+
+    font-family: "Lalezar", sans-serif;
+    font-size: 27px;
+    font-weight: bold;
+
+    white-space: nowrap;
+    line-height: 1;
+
+    transition: 0.25s ease;
+}
+
+.menu a:hover {
+    opacity: 0.7;
+    transform: translateY(-2px);
+}
+
+.apoie {
+    padding: 17px 50px;
+    border-radius: 20px;
+
+    background-color: #C78DE0;
+    color: white !important;
+}
+
+/* =========================
+   ÁREA PRINCIPAL
+========================= */
+
+.programas {
+    width: 86%;
+    max-width: 1800px;
+
+    margin: 35px auto 70px;
+
+    padding: 40px 30px 45px;
+
+    background-color: #A9DEC5;
+    border-radius: 60px;
+}
+
+/* =========================
+   TÍTULO
+========================= */
+
+.titulo-container {
+    width: 75%;
+    margin: 0 auto 55px;
+
+    background-color: #BBEDD6;
+    border-radius: 40px;
+
+    text-align: center;
+}
+
+.titulo {
+    padding: 8px 20px;
+
+    color: #C184DD;
+
+    font-family: "Climate Crisis", sans-serif;
+    font-size: clamp(35px, 4vw, 65px);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 65px;
+    padding: 0 10px;
+}
+
+.card {
+    min-height: 690px;
+
+    padding: 28px 23px 35px;
+
+    background-color: #BBEDD6;
+    border-radius: 55px;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(113, 168, 145, 0.15);
+}
+
+.card-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 45px;
+    margin-bottom: 28px;
+}
+
+.card h2 {
+    margin-bottom: 20px;
+
+    color: #C184DD;
+
+    font-family: "Climate Crisis", sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.card p {
+    max-width: 270px;
+
+    color: #789C8C;
+
+    font-family: "Lalezar", sans-serif;
+    font-size: 20px;
+    line-height: 1.75;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1250px) {
+    .navbar {
+        padding: 0 3%;
+        gap: 25px;
+    }
+
+    .menu {
+        gap: 25px;
+    }
+
+    .menu a {
+        font-size: 22px;
+    }
+
+    .apoie {
+        padding: 15px 30px;
+    }
+
+    .cards {
+        gap: 25px;
+    }
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 900px) {
+    .navbar {
+        min-height: auto;
+        padding: 25px 5%;
+
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .navbar nav {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .menu {
+        width: max-content;
+        justify-content: flex-start;
+        gap: 30px;
+        padding-bottom: 5px;
+    }
+
+    .menu a {
+        font-size: 22px;
+    }
+
+    .programas {
+        width: 92%;
+        border-radius: 40px;
+    }
+
+    .titulo-container {
+        width: 90%;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .programas {
+        padding: 25px 15px 35px;
+        border-radius: 30px;
+    }
+
+    .titulo-container {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .titulo {
+        font-size: 30px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        min-height: auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <!-- UMA ÚNICA LOGO -->
+    <div class="logo">
+        <img src="data
